@@ -2,7 +2,7 @@ FogSim
 
 Simulation FTW bro, Hotler did nothing wrong
 
-Save me internet
+<b>Save me internet</b>
 ![alt text](https://github.com/ardianzzz666/FogSim/blob/master/Image/Saveme.jpg)
 
 
