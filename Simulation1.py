@@ -18,12 +18,9 @@ sys.path.append('D:\\Michael\\FogSim\\')
 from yafs.core import Sim
 from yafs.application import Application,Message
 
-#from yafs.population import *
-from Evolutive_population import Evolutive,Statical
 from yafs.topology import Topology
 
 from simpleSelection import MinimunPath
-#from simplePlacement import CloudPlacement
 from yafs.placement import *
 from yafs.stats import Stats
 from yafs.distribution import exponential_distribution, exponentialDistribution
@@ -60,7 +57,6 @@ def create_applications_from_json(data):
     return applications
 
 
-
 def create_json_topology():
 
     t = Topology()
@@ -72,7 +68,6 @@ def create_json_topology():
 
 
     # Setting value IPT, RAM, Storage, BW, IPT
-
     valueIPT = [1000, 1500, 2000, 2500, 3000]
     valueRAM = [1, 2, 3, 4]
     valueStorage = [1, 2]
