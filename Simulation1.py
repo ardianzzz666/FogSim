@@ -1,19 +1,15 @@
-"""
-
-    Created on Wed Nov 22 15:03:21 2017
-
-    @author: isaac
-
-"""
 import random
 import networkx as nx
 import argparse
 from pathlib import Path
+import json
 
 import operator
 import copy
 import time
 import numpy as np
+
+from random import randrange
 
 # Configurasi path sediri bois
 import sys
@@ -30,60 +26,76 @@ from simpleSelection import MinimunPath
 #from simplePlacement import CloudPlacement
 from yafs.placement import *
 from yafs.stats import Stats
-from yafs.distribution import deterministic_distribution,deterministicDistributionStartPoint
+from yafs.distribution import exponential_distribution, exponentialDistribution
+from DynamicPopulation import DynamicPopulation
 
 from yafs.application import fractional_selectivity
 
 RANDOM_SEED = 1
 
-def create_application(name):
-    # APLICATION
-    a = Application(name=name)
 
-    a.set_modules([{"Generator":{"Type":Application.TYPE_SOURCE}},
-                   {"Actuator": {"Type": Application.TYPE_SINK}}
-                   ])
+def create_applications_from_json(data):
+    applications = {}
+    for app in data:
+        a = Application(name=app["name"])
+        modules = [{"None":{"Type":Application.TYPE_SOURCE}}]
+        for module in app["module"]:
+            modules.append({module["name"]: {"RAM": module["RAM"], "Type": Application.TYPE_MODULE}})
+        a.set_modules(modules)
 
-    m_egg = Message("M.Action", "Generator", "Actuator", instructions=100, bytes=10)
-    a.add_source_messages(m_egg)
+        ms = {}
+        for message in app["message"]:
+            ms[message["name"]] = Message(message["name"],message["s"],message["d"],instructions=message["instructions"],bytes=message["bytes"])
+            if message["s"] == "None":
+                a.add_source_messages(ms[message["name"]])
 
-    return a
+        for idx, message in enumerate(app["transmission"]):
+            if "message_out" in message.keys():
+                a.add_service_module(message["module"],ms[message["message_in"]], ms[message["message_out"]], fractional_selectivity, threshold=1.0)
+            else:
+                a.add_service_module(message["module"], ms[message["message_in"]])
+
+        applications[app["name"]]=a
+
+    return applications
 
 
 
 def create_json_topology():
-    """
-        TOPOLOGY DEFINITION
-
-    Some attributes of fog entities (nodes) are approximate
-    """
 
     t = Topology()
-    t.G=nx.barabasi_albert_graph(20, 5)
-
+    t.G=nx.barabasi_albert_graph(1000, 5)
 
     ls = list(t.G.nodes)
     li = {x: int(x) for x in ls}
-    nx.relabel_nodes(t.G, li, False) #Transform str-labels to int-labels
+    nx.relabel_nodes(t.G, li, False)
 
 
-    print("Nodes: %i" %len(t.G.nodes()))
-    print("Edges: %i" %len(t.G.edges()))
-    #MANDATORY fields of a link
-    # Default values =  {"BW": 1, "PR": 1}
-    valuesOne = {x :1 for x in t.G.edges()}
+    # Setting value IPT, RAM, Storage, BW, IPT
 
-    #print(valuesOne)
+    valueIPT = [1000, 1500, 2000, 2500, 3000]
+    valueRAM = [1, 2, 3, 4]
+    valueStorage = [1, 2]
 
-    nx.set_edge_attributes(t.G, name='BW', values=valuesOne)
-    nx.set_edge_attributes(t.G, name='PR', values=valuesOne)
+    valueBW = [1, 2]
+    valuePR = [1, 2]
+
+    # Random node mana yg pakek IPT berapa dll
+    penentuanBW = {x :random.choice(valueBW) for x in t.G.edges()}
+    penentuanPR = {x :random.choice(valuePR) for x in t.G.edges()}
+    penentuanIPT = {x :random.choice(valueIPT) for x in t.G.nodes()}
+    penentuanRAM = {x :random.choice(valueRAM) for x in t.G.nodes()}
+    penentuanStorage = {x :random.choice(valueRAM) for x in t.G.nodes()}
+
+    nx.set_node_attributes(t.G,values=penentuanIPT, name="IPT")
+    nx.set_node_attributes(t.G,values=penentuanRAM, name="RAM")
+    nx.set_node_attributes(t.G,values=penentuanStorage, name="Storage")
+    nx.set_edge_attributes(t.G, name='BW', values=penentuanBW)
+    nx.set_edge_attributes(t.G, name='PR', values=penentuanPR)
 
     return t
 
-
-
-# @profile
-def main(simulated_time):
+def main(simulated_time, case, it):
 
     random.seed(RANDOM_SEED)
     np.random.seed(RANDOM_SEED)
@@ -92,16 +104,13 @@ def main(simulated_time):
     folder_results.mkdir(parents=True, exist_ok=True)
     folder_results = str(folder_results)+"/"
 
-    """
-    TOPOLOGY from a json
-    """
-    #t = Topology()
+
+    # Panggil fungsi create topology
     t = create_json_topology()
-    #t.load(t_json)
-    nx.write_gexf(t.G,folder_results+"testing_mikel.graphml") # you can export the Graph in multiples format to view in tools like Gephi, and so on.
+    nx.write_gexf(t.G,folder_results+"graph_topology_simulasi.graphml")
 
-    print(t)
 
+    # Cari mana node mempunyai centrality paling tinggi untuk dijadikan source
     centrality = nx.betweenness_centrality(t.G)
     nx.set_node_attributes(t.G, name="centrality", values=centrality)
 
@@ -117,94 +126,57 @@ def main(simulated_time):
     print("-"*5)
 
 
-    print(main_fog_device)
+    # Panggil fungsi create aplikasi dari json
+    dataApp = json.load(open('JSON/app.json'))
+    apps = create_applications_from_json(dataApp)
 
-
-    """
-    APPLICATION
-    """
-    app1 = create_application("Aplikasi A")
-    app2 = create_application("Aplikasi B")
-
-    """
-    PLACEMENT algorithm
-    """
-    #placement = CloudPlacement("onCloud") # it defines the deployed rules: module-device
-    #placement.scaleService({"ServiceA": 1})
-
+    # Algoritma placement
     placement = NoPlacementOfModules("empty")
 
 
-    """
-    POPULATION algorithm
-    """
-
-    number_generators = int(len(t.G)*0.1)
-    print(number_generators)
-    dDistribution = deterministicDistributionStartPoint(3000,300,name="Deterministic")
-    dDistributionSrc = deterministic_distribution(name="Deterministic", time=10)
-    pop1 = Evolutive(top5_devices,number_generators,name="top",activation_dist=dDistribution)
-    pop1.set_sink_control({"app":app1.name,"number": 1, "module": app1.get_sink_modules()})
-    pop1.set_src_control(
-        {"number": 1, "message": app1.get_message("M.Action"), "distribution": dDistributionSrc}
-        )
-
-
-    pop2 = Statical(number_generators,name="Statical")
-    pop2.set_sink_control({"id": main_fog_device, "number": number_generators, "module": app2.get_sink_modules()})
-
-    pop2.set_src_control(
-        {"number": 1, "message": app2.get_message("M.Action"), "distribution": dDistributionSrc})
-
-
-    """--
-    SELECTOR algorithm
-    """
-    #Their "selector" is actually the shortest way, there is not type of orchestration algorithm.
-    #This implementation is already created in selector.class,called: First_ShortestPath
+    # Minimum selector path
     selectorPath = MinimunPath()
 
-    #selectorPath1 = BroadPath()
-
-    #selectorPath2 = CloudPath_RR()
-
-    """
-    SIMULATION ENGINE
-    """
-
+    # setup simulasi
     stop_time = simulated_time
-    s = Sim(t, default_results_path=folder_results+"run_aplikasi_B")
-    #s.deploy_app2(app1, placement, pop1, selectorPath)
-    s.deploy_app2(app2, placement, pop1, selectorPath)
+    s = Sim(t, default_results_path="results/Hasil_testing")
 
 
-    """
-    RUNNING - last step
-    """
-    s.run(stop_time, show_progress_monitor=False)  # To test deployments put test_initial_deploy a TRUE
-    s.print_debug_assignaments()
+    # Nentuin populasi
+    dataPopulation = json.load(open('JSON/population.json'))
+    # setiap aplikasi memiliki population policy yang unique
+    for aName in apps.keys():
+        data = []
+        for element in dataPopulation["sources"]:
+            if element['app'] == aName:
+                data.append(element)
 
-    # s.draw_allocated_topology() # for debugging
+        distribution = exponentialDistribution(name="Exp", lambd=random.randint(100,200), seed= int(aName)*100+it)
+        pop_app = DynamicPopulation(name="Dynamic_%s" % aName, data=data, iteration=it, activation_dist=distribution)
+        s.deploy_app2(apps[aName], placement, pop_app, selectorPath)
+
 
 if __name__ == '__main__':
     import logging.config
     import os
 
-    logging.config.fileConfig(os.getcwd()+'/logging.ini')
+    pathExperimento = Path("results/")
+    print("PATH EXPERIMENTO: ",pathExperimento)
+    nSimulations = 1
+    timeSimulation = 1000000 #100000
 
-    start_time = time.time()
-    main(simulated_time=1000)
+    # Multiple simulations
+    for i in range(nSimulations):
+        start_time = time.time()
 
-    print("\n--- %s seconds ---" % (time.time() - start_time))
+        random.seed(i)
+        np.random.seed(i)
 
-    ### Finally, you can analyse the results:
-    # print "-"*20
-    # print "Results:"
-    # print "-" * 20
-    # m = Stats(defaultPath="Results") #Same name of the results
-    # time_loops = [["M.A", "M.B"]]
-    # m.showResults2(1000, time_loops=time_loops)
-    # print "\t- Network saturation -"
-    # print "\t\tAverage waiting messages : %i" % m.average_messages_not_transmitted()
-    # print "\t\tPeak of waiting messages : %i" % m.peak_messages_not_transmitted()PartitionILPPlacement
-    # print "\t\tTOTAL messages not transmitted: %i" % m.messages_not_transmitted()
+        logging.info("Running Conquest - %s" %pathExperimento)
+
+        main(simulated_time=timeSimulation, case='CQ',it=i)
+
+        print("\n--- %s seconds ---" % (time.time() - start_time))
+        start_time = time.time()
+
+    print("Simulation Done")
