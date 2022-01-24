@@ -60,7 +60,7 @@ def create_applications_from_json(data):
 def create_json_topology():
 
     t = Topology()
-    t.G=nx.barabasi_albert_graph(1000, 5)
+    t.G=nx.barabasi_albert_graph(40, 5)
 
     ls = list(t.G.nodes)
     li = {x: int(x) for x in ls}
@@ -137,15 +137,16 @@ def main(simulated_time, case, it):
     s = Sim(t, default_results_path="results/Hasil_testing")
 
 
-    # Nentuin populasi
+    # Nentuin populasi mana yg deploy aplikasi di node mana
     dataPopulation = json.load(open('JSON/population.json'))
     # setiap aplikasi memiliki population policy yang unique
     for aName in apps.keys():
+        #print(aName)
         data = []
         for element in dataPopulation["sources"]:
             if element['app'] == aName:
                 data.append(element)
-
+                print(data)
         distribution = exponentialDistribution(name="Exp", lambd=random.randint(100,200), seed= int(aName)*100+it)
         pop_app = DynamicPopulation(name="Dynamic_%s" % aName, data=data, iteration=it, activation_dist=distribution)
         s.deploy_app2(apps[aName], placement, pop_app, selectorPath)
@@ -156,7 +157,7 @@ if __name__ == '__main__':
     import os
 
     pathExperimento = Path("results/")
-    print("PATH EXPERIMENTO: ",pathExperimento)
+    print("Path Experiment : ",pathExperimento)
     nSimulations = 1
     timeSimulation = 1000000 #100000
 
