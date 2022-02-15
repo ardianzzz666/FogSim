@@ -64,9 +64,11 @@ def create_applications_from_json(data):
 
     return applications, name_app, name_module, name_message
 
-def create_placement(node_id, name_app, name_module, app_jumlah):
+def create_placement_population(node_id, name_app, name_module, app_jumlah, name_message, lamb):
     JSONfile={"initialAllocation" : []}
+    JSONfile2={"sources" : []}
     allocation=[]
+    popul=[]
 
     for idx,node in enumerate(node_id):
         in_rg=randrange(app_jumlah)
@@ -75,33 +77,27 @@ def create_placement(node_id, name_app, name_module, app_jumlah):
             "app": str(name_app[in_rg]),
             "id_resource": random.choice(node_id)
         }
-        allocation.append(string)
 
-    JSONfile["initialAllocation"] += allocation
-    json_object = json.dumps(JSONfile, indent = 2)
-
-    with open("JSON/Placement_testing.json", "w") as outfile:
-        outfile.write(json_object)
-    return True
-
-def create_population(node_id, name_app, name_message, lamb, app_jumlah):
-    JSONfile2={"sources" : []}
-    popul=[]
-
-    for idx,node in enumerate(node_id):
-        in_rg=randrange(app_jumlah)
-        string={
+        string2={
             "id_resource": random.choice(node_id),
             "app": str(name_app[in_rg]),
             "message": str(name_message[in_rg]),
             "lambda": random.choice(lamb)
         }
-        popul.append(string)
+        allocation.append(string)
+        popul.append(string2)
 
+    JSONfile["initialAllocation"] += allocation
     JSONfile2["sources"] += popul
-    json_object = json.dumps(JSONfile2, indent = 2)
-    with open("JSON/Population_testing.json", "w") as outfile:
+
+    json_object = json.dumps(JSONfile, indent = 2)
+    json_object2 = json.dumps(JSONfile2, indent = 2)
+
+    with open("JSON/Placement_testing.json", "w") as outfile:
         outfile.write(json_object)
+
+    with open("JSON/Population_testing.json", "w") as outfile:
+        outfile.write(json_object2)
     return True
 
 def create_json_topology(jumlah_node):
@@ -151,7 +147,7 @@ def main(simulated_time):
 
 
     # Panggil fungsi create topology
-    jumlah_node = 40
+    jumlah_node = 100
     t, dc = create_json_topology(jumlah_node)
 
     # Cari centrality besar atau kecil
@@ -174,11 +170,8 @@ def main(simulated_time):
     app_jumlah = 10
 
     # Create JSON placement pakai fungsi create_placement
-    create_pl = create_placement(node_id, name_app, name_module, app_jumlah)
-
-    # Create JSON population pakai fungsi create_population
     lamb = [100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]
-    create_pop = create_population(node_id, name_app, name_message, lamb, app_jumlah)
+    create_pl = create_placement_population(node_id, name_app, name_module, app_jumlah, name_message, lamb)
 
     # Algoritma placement pakek JSON
     placementJson = json.load(open('JSON/Placement_testing.json'))
