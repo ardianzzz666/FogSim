@@ -1,0 +1,962 @@
+[
+  {
+    "name": "0",
+    "transmission": [
+      {
+        "message_out": "0_(0-1)",
+        "module": "0_0",
+        "message_in": "M.USER.APP.0"
+      },
+      {
+        "module": "0_1",
+        "message_in": "0_(0-1)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 6,
+        "type": "MODULE",
+        "id": 0,
+        "name": "0_0"
+      },
+      {
+        "RAM": 6,
+        "type": "MODULE",
+        "id": 1,
+        "name": "0_1"
+      }
+    ],
+    "deadline": 25419,
+    "message": [
+      {
+        "d": "0_0",
+        "bytes": 3366,
+        "name": "M.USER.APP.0",
+        "s": "None",
+        "id": 0,
+        "instructions": 32
+      },
+      {
+        "d": "0_1",
+        "bytes": 4107,
+        "name": "0_(0-1)",
+        "s": "0_0",
+        "id": 1,
+        "instructions": 25
+      }
+    ],
+    "id": 0
+  },
+  {
+    "name": "1",
+    "transmission": [
+      {
+        "message_out": "1_(1-2)",
+        "module": "1_1",
+        "message_in": "M.USER.APP.1"
+      },
+      {
+        "module": "1_2",
+        "message_in": "1_(1-2)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 3,
+        "type": "MODULE",
+        "id": 1,
+        "name": "1_1"
+      },
+      {
+        "RAM": 2,
+        "type": "MODULE",
+        "id": 2,
+        "name": "1_2"
+      }
+    ],
+    "deadline": 47762,
+    "message": [
+      {
+        "d": "1_1",
+        "bytes": 3252,
+        "name": "M.USER.APP.1",
+        "s": "None",
+        "id": 1,
+        "instructions": 55
+      },
+      {
+        "d": "1_2",
+        "bytes": 4127,
+        "name": "1_(1-2)",
+        "s": "1_1",
+        "id": 2,
+        "instructions": 44
+      }
+    ],
+    "id": 1
+  },
+  {
+    "name": "2",
+    "transmission": [
+      {
+        "message_out": "2_(2-3)",
+        "module": "2_2",
+        "message_in": "M.USER.APP.2"
+      },
+      {
+        "module": "2_3",
+        "message_in": "2_(2-3)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 4,
+        "type": "MODULE",
+        "id": 2,
+        "name": "2_2"
+      },
+      {
+        "RAM": 3,
+        "type": "MODULE",
+        "id": 3,
+        "name": "2_3"
+      }
+    ],
+    "deadline": 31202,
+    "message": [
+      {
+        "d": "2_2",
+        "bytes": 3148,
+        "name": "M.USER.APP.2",
+        "s": "None",
+        "id": 2,
+        "instructions": 29
+      },
+      {
+        "d": "2_3",
+        "bytes": 2835,
+        "name": "2_(2-3)",
+        "s": "2_2",
+        "id": 3,
+        "instructions": 45
+      }
+    ],
+    "id": 2
+  },
+  {
+    "name": "3",
+    "transmission": [
+      {
+        "message_out": "3_(3-4)",
+        "module": "3_3",
+        "message_in": "M.USER.APP.3"
+      },
+      {
+        "module": "3_4",
+        "message_in": "3_(3-4)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 5,
+        "type": "MODULE",
+        "id": 3,
+        "name": "3_3"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 4,
+        "name": "3_4"
+      }
+    ],
+    "deadline": 46718,
+    "message": [
+      {
+        "d": "3_3",
+        "bytes": 3549,
+        "name": "M.USER.APP.3",
+        "s": "None",
+        "id": 3,
+        "instructions": 38
+      },
+      {
+        "d": "3_4",
+        "bytes": 2844,
+        "name": "3_(3-4)",
+        "s": "3_3",
+        "id": 4,
+        "instructions": 27
+      }
+    ],
+    "id": 3
+  },
+  {
+    "name": "4",
+    "transmission": [
+      {
+        "message_out": "4_(4-5)",
+        "module": "4_4",
+        "message_in": "M.USER.APP.4"
+      },
+      {
+        "module": "4_5",
+        "message_in": "4_(4-5)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 5,
+        "type": "MODULE",
+        "id": 4,
+        "name": "4_4"
+      },
+      {
+        "RAM": 5,
+        "type": "MODULE",
+        "id": 5,
+        "name": "4_5"
+      }
+    ],
+    "deadline": 32134,
+    "message": [
+      {
+        "d": "4_4",
+        "bytes": 4302,
+        "name": "M.USER.APP.4",
+        "s": "None",
+        "id": 4,
+        "instructions": 41
+      },
+      {
+        "d": "4_5",
+        "bytes": 4479,
+        "name": "4_(4-5)",
+        "s": "4_4",
+        "id": 5,
+        "instructions": 46
+      }
+    ],
+    "id": 4
+  },
+  {
+    "name": "5",
+    "transmission": [
+      {
+        "message_out": "5_(5-6)",
+        "module": "5_5",
+        "message_in": "M.USER.APP.5"
+      },
+      {
+        "module": "5_6",
+        "message_in": "5_(5-6)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 2,
+        "type": "MODULE",
+        "id": 5,
+        "name": "5_5"
+      },
+      {
+        "RAM": 6,
+        "type": "MODULE",
+        "id": 6,
+        "name": "5_6"
+      }
+    ],
+    "deadline": 19469,
+    "message": [
+      {
+        "d": "5_5",
+        "bytes": 2384,
+        "name": "M.USER.APP.5",
+        "s": "None",
+        "id": 5,
+        "instructions": 34
+      },
+      {
+        "d": "5_6",
+        "bytes": 3478,
+        "name": "5_(5-6)",
+        "s": "5_5",
+        "id": 6,
+        "instructions": 27
+      }
+    ],
+    "id": 5
+  },
+  {
+    "name": "6",
+    "transmission": [
+      {
+        "message_out": "6_(6-7)",
+        "module": "6_6",
+        "message_in": "M.USER.APP.6"
+      },
+      {
+        "module": "6_7",
+        "message_in": "6_(6-7)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 4,
+        "type": "MODULE",
+        "id": 6,
+        "name": "6_6"
+      },
+      {
+        "RAM": 3,
+        "type": "MODULE",
+        "id": 7,
+        "name": "6_7"
+      }
+    ],
+    "deadline": 13536,
+    "message": [
+      {
+        "d": "6_6",
+        "bytes": 2207,
+        "name": "M.USER.APP.6",
+        "s": "None",
+        "id": 6,
+        "instructions": 30
+      },
+      {
+        "d": "6_7",
+        "bytes": 4397,
+        "name": "6_(6-7)",
+        "s": "6_6",
+        "id": 7,
+        "instructions": 30
+      }
+    ],
+    "id": 6
+  },
+  {
+    "name": "7",
+    "transmission": [
+      {
+        "message_out": "7_(7-8)",
+        "module": "7_7",
+        "message_in": "M.USER.APP.7"
+      },
+      {
+        "module": "7_8",
+        "message_in": "7_(7-8)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 4,
+        "type": "MODULE",
+        "id": 7,
+        "name": "7_7"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 8,
+        "name": "7_8"
+      }
+    ],
+    "deadline": 39763,
+    "message": [
+      {
+        "d": "7_7",
+        "bytes": 1931,
+        "name": "M.USER.APP.7",
+        "s": "None",
+        "id": 7,
+        "instructions": 26
+      },
+      {
+        "d": "7_8",
+        "bytes": 2018,
+        "name": "7_(7-8)",
+        "s": "7_7",
+        "id": 8,
+        "instructions": 33
+      }
+    ],
+    "id": 7
+  },
+  {
+    "name": "8",
+    "transmission": [
+      {
+        "message_out": "8_(8-9)",
+        "module": "8_8",
+        "message_in": "M.USER.APP.8"
+      },
+      {
+        "module": "8_9",
+        "message_in": "8_(8-9)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 2,
+        "type": "MODULE",
+        "id": 8,
+        "name": "8_8"
+      },
+      {
+        "RAM": 4,
+        "type": "MODULE",
+        "id": 9,
+        "name": "8_9"
+      }
+    ],
+    "deadline": 37869,
+    "message": [
+      {
+        "d": "8_8",
+        "bytes": 3945,
+        "name": "M.USER.APP.8",
+        "s": "None",
+        "id": 8,
+        "instructions": 37
+      },
+      {
+        "d": "8_9",
+        "bytes": 2692,
+        "name": "8_(8-9)",
+        "s": "8_8",
+        "id": 9,
+        "instructions": 45
+      }
+    ],
+    "id": 8
+  },
+  {
+    "name": "9",
+    "transmission": [
+      {
+        "message_out": "9_(9-10)",
+        "module": "9_9",
+        "message_in": "M.USER.APP.9"
+      },
+      {
+        "module": "9_10",
+        "message_in": "9_(9-10)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 4,
+        "type": "MODULE",
+        "id": 9,
+        "name": "9_9"
+      },
+      {
+        "RAM": 4,
+        "type": "MODULE",
+        "id": 10,
+        "name": "9_10"
+      }
+    ],
+    "deadline": 38139,
+    "message": [
+      {
+        "d": "9_9",
+        "bytes": 2548,
+        "name": "M.USER.APP.9",
+        "s": "None",
+        "id": 9,
+        "instructions": 51
+      },
+      {
+        "d": "9_10",
+        "bytes": 1654,
+        "name": "9_(9-10)",
+        "s": "9_9",
+        "id": 10,
+        "instructions": 44
+      }
+    ],
+    "id": 9
+  },
+  {
+    "name": "10",
+    "transmission": [
+      {
+        "message_out": "10_(10-11)",
+        "module": "10_10",
+        "message_in": "M.USER.APP.10"
+      },
+      {
+        "module": "10_11",
+        "message_in": "10_(10-11)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 10,
+        "name": "10_10"
+      },
+      {
+        "RAM": 2,
+        "type": "MODULE",
+        "id": 11,
+        "name": "10_11"
+      }
+    ],
+    "deadline": 20761,
+    "message": [
+      {
+        "d": "10_10",
+        "bytes": 2841,
+        "name": "M.USER.APP.10",
+        "s": "None",
+        "id": 10,
+        "instructions": 50
+      },
+      {
+        "d": "10_11",
+        "bytes": 3637,
+        "name": "10_(10-11)",
+        "s": "10_10",
+        "id": 11,
+        "instructions": 37
+      }
+    ],
+    "id": 10
+  },
+  {
+    "name": "11",
+    "transmission": [
+      {
+        "message_out": "11_(11-12)",
+        "module": "11_11",
+        "message_in": "M.USER.APP.11"
+      },
+      {
+        "module": "11_12",
+        "message_in": "11_(11-12)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 11,
+        "name": "11_11"
+      },
+      {
+        "RAM": 6,
+        "type": "MODULE",
+        "id": 12,
+        "name": "11_12"
+      }
+    ],
+    "deadline": 40563,
+    "message": [
+      {
+        "d": "11_11",
+        "bytes": 3861,
+        "name": "M.USER.APP.11",
+        "s": "None",
+        "id": 11,
+        "instructions": 37
+      },
+      {
+        "d": "11_12",
+        "bytes": 1545,
+        "name": "11_(11-12)",
+        "s": "11_11",
+        "id": 12,
+        "instructions": 55
+      }
+    ],
+    "id": 11
+  },
+  {
+    "name": "12",
+    "transmission": [
+      {
+        "message_out": "12_(12-13)",
+        "module": "12_12",
+        "message_in": "M.USER.APP.12"
+      },
+      {
+        "module": "12_13",
+        "message_in": "12_(12-13)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 4,
+        "type": "MODULE",
+        "id": 12,
+        "name": "12_12"
+      },
+      {
+        "RAM": 2,
+        "type": "MODULE",
+        "id": 13,
+        "name": "12_13"
+      }
+    ],
+    "deadline": 13835,
+    "message": [
+      {
+        "d": "12_12",
+        "bytes": 1551,
+        "name": "M.USER.APP.12",
+        "s": "None",
+        "id": 12,
+        "instructions": 33
+      },
+      {
+        "d": "12_13",
+        "bytes": 3351,
+        "name": "12_(12-13)",
+        "s": "12_12",
+        "id": 13,
+        "instructions": 30
+      }
+    ],
+    "id": 12
+  },
+  {
+    "name": "13",
+    "transmission": [
+      {
+        "message_out": "13_(13-14)",
+        "module": "13_13",
+        "message_in": "M.USER.APP.13"
+      },
+      {
+        "module": "13_14",
+        "message_in": "13_(13-14)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 6,
+        "type": "MODULE",
+        "id": 13,
+        "name": "13_13"
+      },
+      {
+        "RAM": 4,
+        "type": "MODULE",
+        "id": 14,
+        "name": "13_14"
+      }
+    ],
+    "deadline": 30582,
+    "message": [
+      {
+        "d": "13_13",
+        "bytes": 2612,
+        "name": "M.USER.APP.13",
+        "s": "None",
+        "id": 13,
+        "instructions": 20
+      },
+      {
+        "d": "13_14",
+        "bytes": 2706,
+        "name": "13_(13-14)",
+        "s": "13_13",
+        "id": 14,
+        "instructions": 52
+      }
+    ],
+    "id": 13
+  },
+  {
+    "name": "14",
+    "transmission": [
+      {
+        "message_out": "14_(14-15)",
+        "module": "14_14",
+        "message_in": "M.USER.APP.14"
+      },
+      {
+        "module": "14_15",
+        "message_in": "14_(14-15)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 14,
+        "name": "14_14"
+      },
+      {
+        "RAM": 6,
+        "type": "MODULE",
+        "id": 15,
+        "name": "14_15"
+      }
+    ],
+    "deadline": 42131,
+    "message": [
+      {
+        "d": "14_14",
+        "bytes": 4457,
+        "name": "M.USER.APP.14",
+        "s": "None",
+        "id": 14,
+        "instructions": 24
+      },
+      {
+        "d": "14_15",
+        "bytes": 3115,
+        "name": "14_(14-15)",
+        "s": "14_14",
+        "id": 15,
+        "instructions": 40
+      }
+    ],
+    "id": 14
+  },
+  {
+    "name": "15",
+    "transmission": [
+      {
+        "message_out": "15_(15-16)",
+        "module": "15_15",
+        "message_in": "M.USER.APP.15"
+      },
+      {
+        "module": "15_16",
+        "message_in": "15_(15-16)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 5,
+        "type": "MODULE",
+        "id": 15,
+        "name": "15_15"
+      },
+      {
+        "RAM": 6,
+        "type": "MODULE",
+        "id": 16,
+        "name": "15_16"
+      }
+    ],
+    "deadline": 28088,
+    "message": [
+      {
+        "d": "15_15",
+        "bytes": 2041,
+        "name": "M.USER.APP.15",
+        "s": "None",
+        "id": 15,
+        "instructions": 35
+      },
+      {
+        "d": "15_16",
+        "bytes": 1946,
+        "name": "15_(15-16)",
+        "s": "15_15",
+        "id": 16,
+        "instructions": 39
+      }
+    ],
+    "id": 15
+  },
+  {
+    "name": "16",
+    "transmission": [
+      {
+        "message_out": "16_(16-17)",
+        "module": "16_16",
+        "message_in": "M.USER.APP.16"
+      },
+      {
+        "module": "16_17",
+        "message_in": "16_(16-17)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 5,
+        "type": "MODULE",
+        "id": 16,
+        "name": "16_16"
+      },
+      {
+        "RAM": 4,
+        "type": "MODULE",
+        "id": 17,
+        "name": "16_17"
+      }
+    ],
+    "deadline": 16501,
+    "message": [
+      {
+        "d": "16_16",
+        "bytes": 3565,
+        "name": "M.USER.APP.16",
+        "s": "None",
+        "id": 16,
+        "instructions": 55
+      },
+      {
+        "d": "16_17",
+        "bytes": 2870,
+        "name": "16_(16-17)",
+        "s": "16_16",
+        "id": 17,
+        "instructions": 24
+      }
+    ],
+    "id": 16
+  },
+  {
+    "name": "17",
+    "transmission": [
+      {
+        "message_out": "17_(17-18)",
+        "module": "17_17",
+        "message_in": "M.USER.APP.17"
+      },
+      {
+        "module": "17_18",
+        "message_in": "17_(17-18)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 3,
+        "type": "MODULE",
+        "id": 17,
+        "name": "17_17"
+      },
+      {
+        "RAM": 4,
+        "type": "MODULE",
+        "id": 18,
+        "name": "17_18"
+      }
+    ],
+    "deadline": 27313,
+    "message": [
+      {
+        "d": "17_17",
+        "bytes": 3139,
+        "name": "M.USER.APP.17",
+        "s": "None",
+        "id": 17,
+        "instructions": 45
+      },
+      {
+        "d": "17_18",
+        "bytes": 2516,
+        "name": "17_(17-18)",
+        "s": "17_17",
+        "id": 18,
+        "instructions": 25
+      }
+    ],
+    "id": 17
+  },
+  {
+    "name": "18",
+    "transmission": [
+      {
+        "message_out": "18_(18-19)",
+        "module": "18_18",
+        "message_in": "M.USER.APP.18"
+      },
+      {
+        "module": "18_19",
+        "message_in": "18_(18-19)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 6,
+        "type": "MODULE",
+        "id": 18,
+        "name": "18_18"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 19,
+        "name": "18_19"
+      }
+    ],
+    "deadline": 10931,
+    "message": [
+      {
+        "d": "18_18",
+        "bytes": 2742,
+        "name": "M.USER.APP.18",
+        "s": "None",
+        "id": 18,
+        "instructions": 33
+      },
+      {
+        "d": "18_19",
+        "bytes": 2745,
+        "name": "18_(18-19)",
+        "s": "18_18",
+        "id": 19,
+        "instructions": 55
+      }
+    ],
+    "id": 18
+  },
+  {
+    "name": "19",
+    "transmission": [
+      {
+        "message_out": "19_(19-20)",
+        "module": "19_19",
+        "message_in": "M.USER.APP.19"
+      },
+      {
+        "module": "19_20",
+        "message_in": "19_(19-20)"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 3,
+        "type": "MODULE",
+        "id": 19,
+        "name": "19_19"
+      },
+      {
+        "RAM": 5,
+        "type": "MODULE",
+        "id": 20,
+        "name": "19_20"
+      }
+    ],
+    "deadline": 30034,
+    "message": [
+      {
+        "d": "19_19",
+        "bytes": 2310,
+        "name": "M.USER.APP.19",
+        "s": "None",
+        "id": 19,
+        "instructions": 27
+      },
+      {
+        "d": "19_20",
+        "bytes": 2566,
+        "name": "19_(19-20)",
+        "s": "19_19",
+        "id": 20,
+        "instructions": 30
+      }
+    ],
+    "id": 19
+  }
+]
