@@ -1,0 +1,253 @@
+[
+  {
+    "name": "0",
+    "transmission": [
+      {
+        "message_out": "M0_1",
+        "module": "Mod0",
+        "message_in": "M.USER.APP.0"
+      },
+      {
+        "message_out": "M0_2",
+        "module": "Mod0",
+        "message_in": "M.USER.APP.0"
+      },
+      {
+        "message_out": "M0_3",
+        "module": "Mod0",
+        "message_in": "M.USER.APP.0"
+      },
+      {
+        "message_out": "M0_4",
+        "module": "Mod0",
+        "message_in": "M.USER.APP.0"
+      },
+      {
+        "message_out": "M1_1",
+        "module": "Mod1",
+        "message_in": "M0_1"
+      },
+      {
+        "message_out": "M1_2",
+        "module": "Mod2",
+        "message_in": "M0_2"
+      },
+      {
+        "message_out": "M1_3",
+        "module": "Mod3",
+        "message_in": "M0_3"
+      },
+      {
+        "message_out": "M1_4",
+        "module": "Mod4",
+        "message_in": "M0_4"
+      },
+      {
+        "message_out": "M2_1",
+        "module": "Mod5",
+        "message_in": "M1_1"
+      },
+      {
+        "message_out": "M2_2",
+        "module": "Mod6",
+        "message_in": "M1_2"
+      },
+      {
+        "message_out": "M2_3",
+        "module": "Mod7",
+        "message_in": "M1_3"
+      },
+      {
+        "message_out": "M2_4",
+        "module": "Mod8",
+        "message_in": "M1_4"
+      },
+      {
+        "module": "Mod9",
+        "message_in": "M2_1"
+      },
+      {
+        "module": "Mod9",
+        "message_in": "M2_2"
+      },
+      {
+        "module": "Mod9",
+        "message_in": "M2_3"
+      },
+      {
+        "module": "Mod9",
+        "message_in": "M2_4"
+      }
+    ],
+    "module": [
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 0,
+        "name": "Mod0"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 1,
+        "name": "Mod1"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 2,
+        "name": "Mod2"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 3,
+        "name": "Mod3"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 4,
+        "name": "Mod4"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 5,
+        "name": "Mod5"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 6,
+        "name": "Mod6"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 7,
+        "name": "Mod7"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 8,
+        "name": "Mod8"
+      },
+      {
+        "RAM": 1,
+        "type": "MODULE",
+        "id": 9,
+        "name": "Mod9"
+      }
+    ],
+    "deadline": 40000,
+    "message": [
+      {
+        "d": "Mod0",
+        "bytes": 1,
+        "name": "M.USER.APP.0",
+        "s": "None",
+        "id": 0,
+        "instructions": 1
+      },
+      {
+        "d": "Mod1",
+        "bytes": 1,
+        "name": "M0_1",
+        "s": "Mod0",
+        "id": 1,
+        "instructions": 1
+      },
+      {
+        "d": "Mod2",
+        "bytes": 1,
+        "name": "M0_2",
+        "s": "Mod0",
+        "id": 2,
+        "instructions": 1
+      },
+      {
+        "d": "Mod3",
+        "bytes": 1,
+        "name": "M0_3",
+        "s": "Mod0",
+        "id": 3,
+        "instructions": 1
+      },
+      {
+        "d": "Mod4",
+        "bytes": 1,
+        "name": "M0_4",
+        "s": "Mod0",
+        "id": 4,
+        "instructions": 1
+      },
+      {
+        "d": "Mod5",
+        "bytes": 1,
+        "name": "M1_1",
+        "s": "Mod1",
+        "id": 5,
+        "instructions": 1
+      },
+      {
+        "d": "Mod6",
+        "bytes": 1,
+        "name": "M1_2",
+        "s": "Mod2",
+        "id": 6,
+        "instructions": 1
+      },
+      {
+        "d": "Mod7",
+        "bytes": 1,
+        "name": "M1_3",
+        "s": "Mod3",
+        "id": 7,
+        "instructions": 1
+      },
+      {
+        "d": "Mod8",
+        "bytes": 1,
+        "name": "M1_4",
+        "s": "Mod4",
+        "id": 8,
+        "instructions": 1
+      },
+      {
+        "d": "Mod9",
+        "bytes": 1,
+        "name": "M2_1",
+        "s": "Mod5",
+        "id": 9,
+        "instructions": 1
+      },
+      {
+        "d": "Mod9",
+        "bytes": 1,
+        "name": "M2_2",
+        "s": "Mod6",
+        "id": 10,
+        "instructions": 1
+      },
+      {
+        "d": "Mod9",
+        "bytes": 1,
+        "name": "M2_3",
+        "s": "Mod7",
+        "id": 11,
+        "instructions": 1
+      },
+      {
+        "d": "Mod9",
+        "bytes": 1,
+        "name": "M2_4",
+        "s": "Mod8",
+        "id": 12,
+        "instructions": 1
+      }
+    ],
+    "id": 0
+  }
+]

@@ -1,0 +1,254 @@
+{
+  "initialAllocation": [
+    {
+      "module_name": "Mod4",
+      "app": "0",
+      "id_resource": 83
+    },
+    {
+      "module_name": "Mod0",
+      "app": "0",
+      "id_resource": 27
+    },
+    {
+      "module_name": "Mod1",
+      "app": "0",
+      "id_resource": 36
+    },
+    {
+      "module_name": "Mod3",
+      "app": "0",
+      "id_resource": 41
+    },
+    {
+      "module_name": "Mod4",
+      "app": "0",
+      "id_resource": 3
+    },
+    {
+      "module_name": "Mod2",
+      "app": "0",
+      "id_resource": 87
+    },
+    {
+      "module_name": "Mod2",
+      "app": "0",
+      "id_resource": 86
+    },
+    {
+      "module_name": "Mod2",
+      "app": "0",
+      "id_resource": 47
+    },
+    {
+      "module_name": "Mod1",
+      "app": "0",
+      "id_resource": 79
+    },
+    {
+      "module_name": "Mod5",
+      "app": "0",
+      "id_resource": 14
+    },
+    {
+      "module_name": "Mod5",
+      "app": "0",
+      "id_resource": 67
+    },
+    {
+      "module_name": "Mod0",
+      "app": "0",
+      "id_resource": 88
+    },
+    {
+      "module_name": "Mod2",
+      "app": "0",
+      "id_resource": 88
+    },
+    {
+      "module_name": "Mod4",
+      "app": "0",
+      "id_resource": 35
+    },
+    {
+      "module_name": "Mod5",
+      "app": "0",
+      "id_resource": 92
+    },
+    {
+      "module_name": "Mod0",
+      "app": "0",
+      "id_resource": 37
+    },
+    {
+      "module_name": "Mod3",
+      "app": "0",
+      "id_resource": 11
+    },
+    {
+      "module_name": "Mod1",
+      "app": "0",
+      "id_resource": 12
+    },
+    {
+      "module_name": "Mod4",
+      "app": "0",
+      "id_resource": 40
+    },
+    {
+      "module_name": "Mod5",
+      "app": "0",
+      "id_resource": 36
+    },
+    {
+      "module_name": "Mod3",
+      "app": "0",
+      "id_resource": 25
+    },
+    {
+      "module_name": "Mod2",
+      "app": "0",
+      "id_resource": 39
+    },
+    {
+      "module_name": "Mod1",
+      "app": "0",
+      "id_resource": 22
+    },
+    {
+      "module_name": "Mod3",
+      "app": "0",
+      "id_resource": 43
+    },
+    {
+      "module_name": "Mod3",
+      "app": "0",
+      "id_resource": 19
+    },
+    {
+      "module_name": "Mod4",
+      "app": "0",
+      "id_resource": 40
+    },
+    {
+      "module_name": "Mod2",
+      "app": "0",
+      "id_resource": 39
+    },
+    {
+      "module_name": "Mod5",
+      "app": "0",
+      "id_resource": 7
+    },
+    {
+      "module_name": "Mod4",
+      "app": "0",
+      "id_resource": 7
+    },
+    {
+      "module_name": "Mod5",
+      "app": "0",
+      "id_resource": 11
+    },
+    {
+      "module_name": "Mod3",
+      "app": "0",
+      "id_resource": 89
+    },
+    {
+      "module_name": "Mod0",
+      "app": "0",
+      "id_resource": 53
+    },
+    {
+      "module_name": "Mod0",
+      "app": "0",
+      "id_resource": 30
+    },
+    {
+      "module_name": "Mod4",
+      "app": "0",
+      "id_resource": 50
+    },
+    {
+      "module_name": "Mod2",
+      "app": "0",
+      "id_resource": 67
+    },
+    {
+      "module_name": "Mod3",
+      "app": "0",
+      "id_resource": 79
+    },
+    {
+      "module_name": "Mod4",
+      "app": "0",
+      "id_resource": 54
+    },
+    {
+      "module_name": "Mod0",
+      "app": "0",
+      "id_resource": 8
+    },
+    {
+      "module_name": "Mod3",
+      "app": "0",
+      "id_resource": 1
+    },
+    {
+      "module_name": "Mod5",
+      "app": "0",
+      "id_resource": 0
+    },
+    {
+      "module_name": "Mod0",
+      "app": "0",
+      "id_resource": 9
+    },
+    {
+      "module_name": "Mod4",
+      "app": "0",
+      "id_resource": 60
+    },
+    {
+      "module_name": "Mod4",
+      "app": "0",
+      "id_resource": 83
+    },
+    {
+      "module_name": "Mod2",
+      "app": "0",
+      "id_resource": 81
+    },
+    {
+      "module_name": "Mod2",
+      "app": "0",
+      "id_resource": 90
+    },
+    {
+      "module_name": "Mod5",
+      "app": "0",
+      "id_resource": 75
+    },
+    {
+      "module_name": "Mod3",
+      "app": "0",
+      "id_resource": 48
+    },
+    {
+      "module_name": "Mod4",
+      "app": "0",
+      "id_resource": 49
+    },
+    {
+      "module_name": "Mod0",
+      "app": "0",
+      "id_resource": 89
+    },
+    {
+      "module_name": "Mod2",
+      "app": "0",
+      "id_resource": 32
+    }
+  ]
+}

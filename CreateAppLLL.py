@@ -2,7 +2,6 @@ import json
 import random
 from random import randrange
 
-#asasa
 # Requirement app dan jumlah APP
 jumlah_app = 30
 no_module = 99
